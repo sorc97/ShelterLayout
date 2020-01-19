@@ -30,11 +30,19 @@
 				<!-- Navigation -->
 				<div class="d-none d-md-block col-md-8 col-lg-6">
 					<nav class="navigation">
-						<ul class="menu d-flex justify-content-between arial">
-							<li class="menu__item"><a href="#">About the shelter</a></li>
-							<li class="menu__item"><a href="#">Our pets</a></li>
-							<li class="menu__item"><a href="#">To help the shelter</a></li>
-							<li class="menu__item"><a href="#">Contacts</a></li>
+						<ul class="menu d-flex justify-content-between">
+							<li class="menu__item">
+								<a href="#about" class="menu__link">About the shelter</a>
+							</li>
+							<li class="menu__item">
+								<a href="#friends" class="menu__link">Our pets</a>
+							</li>
+							<li class="menu__item">
+								<a href="#help" class="menu__link">To help the shelter</a>
+							</li>
+							<li class="menu__item">
+								<a href="#footer" class="menu__link">Contacts</a>
+							</li>
 						</ul>
 					</nav>
 				</div>
@@ -43,22 +51,22 @@
 				<!-- Offer -->
 				<div class="col-12 col-lg-6 d-flex align-items-center">
 					<div class="offer text-center text-md-left">
-						<h1 class="offer__caption georgia">
+						<h1 class="offer__caption">
 							Not only people<br>need a house
 						</h1>
-						<p class="offer__text arial">
+						<p class="offer__text">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras gravida
 							est in porttitor porttitor. Duis sodales elementum ipsum, vehicula
 							condimentum erat fringilla et.
 						</p>
-						<a href="#" class="offer__button georgia">Make a friend</a>
+						<a href="#" class="offer__button button">Make a friend</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</header>
 	<!-- About -->
-	<section class="about">
+	<section class="about" id="about">
 		<div class="container">
 			<div class="row d-flex justify-content-center">
 				<div class="col-12 col-md-5 col-lg-5 about__img d-flex justify-content-center">
@@ -83,7 +91,7 @@
 		</div>
 	</section>
 	<!-- Friends -->
-	<section class="friends">
+	<section class="friends" id="friends">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -105,37 +113,37 @@
 								<img class src="img/Cat.png" alt="friends image">
 							</div>
 							<h2 class="friends-item__name">Katrine</h2>
-							<a href="#" class="friends-item__button">Learn More</a>
+							<a href="#" class="friends-item__button button">Learn More</a>
 						</div>
+						<!-- <div class="slider__item friends-item animated pulse">
+							<div class="friends-item__img">
+								<img class src="img/Dog.png" alt="friends image">
+							</div>
+							<h2 class="friends-item__name">Jennifer</h2>
+							<a href="#" class="friends-item__button button">Learn More</a>
+						</div>
+						<div class="slider__item friends-item animated pulse">
+							<div class="friends-item__img">
+								<img class src="img/Dog3.png" alt="friends image">
+							</div>
+							<h2 class="friends-item__name">Woody</h2>
+							<a href="#" class="friends-item__button button">Learn More</a>
+						</div> -->
 					</div>
 					<button class="slider__arrow-right">
 						<i class="fa fa-arrow-right"></i>
 					</button>
 				</div>
-				<!-- <div class="col-lg-3 col-sm-6 ">
-					<div class="friends__item animated pulse">
-						<img src="img/Dog.png">
-						<h2 class="friends__item_caption">Jennifer</h2>
-						<a href="#" class="friends__item_button">Learn More</a>
-					</div>
-				</div>
-				<div class="col-lg-3 col-sm-12">
-					<div class="friends__item animated pulse">
-						<img src="img/Dog3.png">
-						<h2 class="friends__item_caption">Woody</h2>
-						<a href="#" class="friends__item_button">Learn More</a>
-					</div>
-				</div> -->
 			</div>
 			<div class="row">
 				<div class="col-md-12 d-flex justify-content-center">
-					<a href="#" class="button__offer georgia">Get to know the rest</a>
+					<a href="#" class="button__offer button">Get to know the rest</a>
 				</div>
 			</div>
 		</div>
 	</section>
 	<!-- Help -->
-	<section class="help">
+	<section class="help" id="help">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -236,16 +244,16 @@
 		</div>
 	</section>
 	<!-- Footer -->
-	<footer class="footer">
+	<footer class="footer" id="footer">
 		<div class="container">
 			<div class="row">
 				<div class="col-12 col-md-6 col-lg-4">
+					<!-- Information -->
 					<div class="information footer__information">
 						<h2 class="information__caption caption">
 							For questions<br>
 							and suggestions
 						</h2>
-
 						<div class="information__item d-flex">
 							<div class="information__img">
 								<img src="img/envelope.svg" alt="envelope icon">
