@@ -1,17 +1,23 @@
 'use strict'
 
-// Slider elements
+// Slider variables
 let sliderItems = document.querySelectorAll(".slider__item");
 let sliderItem = document.querySelector(".slider__item");
 let sliderList = document.querySelector(".slider__list");
 let leftArrow = document.querySelector(".slider__button_arrow-left");
 let rightArrow = document.querySelector(".slider__button_arrow-right");
-// Modal elements
+let translateValue = 0;   // Current translate value
+let visibleItems = Math.round(sliderList.offsetWidth/sliderItem.offsetWidth);  // Amount of the visible items
+let currentItem = visibleItems;  // Element placed nearby in the right side of the slider 
+// Modal variables
 let petButtons = document.querySelectorAll(".friends-item__button");
-// Slider variables
-let translateValue = 0;
-let visibleItems = Math.round(sliderList.offsetWidth/sliderItem.offsetWidth);
-let currentItem = visibleItems;
+// Menu variables
+const menu = document.querySelector(".menu");
+const menuToggler = document.querySelector(".nav-toggler");
+const menuCloseBtn = document.querySelector(".menu__button_close");
+let isMenuActive = false;
+
+
 
 // Slider methods
 const slideToRight = () => {
@@ -53,22 +59,46 @@ class Modal {
 
 function toggleModal(e) {
   const modal = document.querySelector('.modal-window');
-  // If modal does not exist, create it
+  // Creation of the new modal window based on the content
   if(!modal) {
     document.body.append(new Modal(getModalContent(e)));
     return;
   }
-  // If modal already exist, toggle his visibility
-  /* const modalVisibility = modal.style.display;
-  modal.style.display = (modalVisibility === 'none') ? 'flex' : 'none'; */
+
   modal.remove();
 }
 
-function getModalContent(e) {
+function getModalContent(e) {  // Content for modal window
   let target = e.target;
   console.log(target);
   let modalItem = target.parentNode.querySelector('.modal-item');
-  // let content = modalItem.firstElementChild;
 
   return modalItem.innerHTML;
 }
+
+// Menu methods
+
+const toggleMenu = () => {
+  if(!isMenuActive) {  // when modal window close
+    menu.style.display = "block";
+    window.addEventListener('click', handleWindowClick);
+    isMenuActive = true;
+    return;
+  }
+  // when modal window open
+  menu.style.display = "none";
+  window.removeEventListener('click', handleWindowClick);
+  isMenuActive = false;
+}
+
+const handleWindowClick = (e) => {
+  const target = e.target;
+  const targetClasses = target.classList;
+  // Close modal, when user clicks on the modal window or one of the menu items
+  if(targetClasses.contains('menu') || targetClasses.contains('menu__link')) {
+    toggleMenu();
+  }
+}
+
+menuToggler.addEventListener('click', toggleMenu);
+menuCloseBtn.addEventListener('click', toggleMenu);

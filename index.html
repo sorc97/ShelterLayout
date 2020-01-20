@@ -8,9 +8,9 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
 		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
-	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/media.css">
 </head>
 
 <body>
@@ -28,9 +28,9 @@
 					</button>
 				</div>
 				<!-- Navigation -->
-				<div class="d-none d-md-block col-md-8 col-lg-6">
+				<div class="d-md-block col-md-8 col-lg-6 menu">
 					<nav class="navigation">
-						<ul class="menu d-flex justify-content-between">
+						<ul class="menu__list">
 							<li class="menu__item">
 								<a href="#about" class="menu__link">About the shelter</a>
 							</li>
@@ -44,6 +44,7 @@
 								<a href="#footer" class="menu__link">Contacts</a>
 							</li>
 						</ul>
+						<button class="fa fa-close d-md-none menu__button menu__button_close button"></button>
 					</nav>
 				</div>
 			</div>
@@ -59,7 +60,7 @@
 							est in porttitor porttitor. Duis sodales elementum ipsum, vehicula
 							condimentum erat fringilla et.
 						</p>
-						<a href="#" class="offer__button button">Make a friend</a>
+						<a href="#friends" class="offer__button button">Make a friend</a>
 					</div>
 				</div>
 			</div>
@@ -75,10 +76,10 @@
 				<div class="col-12 col-md-7 col-lg-6">
 					<div class="about__text">
 						<h2 class="about__caption caption">About the shelter<br>“Cozy House”</h2>
-						<p class="about__description arial">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce efficitur
+						<p class="about__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce efficitur
 							blandit condimentum. Proin accumsan lorem vel gravida fringilla. Suspendisse potenti. Mauris ut pulvinar
 							nunc.</p>
-						<p class="about__description arial">Donec consectetur, diam in porta tempus, urna ligula vestibulum nibh, ac
+						<p class="about__description">Donec consectetur, diam in porta tempus, urna ligula vestibulum nibh, ac
 							ornare felis justo nec leo. Praesent mattis nibh quis
 							ultrices pharetra. Morbi tempus at ante sit amet tristique.
 							Maecenas dignissim justo orci, in laoreet urna dapibus nec. Praesent quis tortor faucibus, tristique ante
@@ -111,7 +112,7 @@
 						<ul class="slider__list">
 
 							<li class="col-12 col-md-6 col-lg-4 slider__item">
-								<div class="friends-item animated pulse">
+								<div class="friends-item">
 									<div class="friends-item__img">
 										<img class src="img/cat.jpeg" alt="friends image">
 									</div>
@@ -147,7 +148,7 @@
 							</li>
 
 							<li class="col-12 col-md-6 col-lg-4 slider__item">
-								<div class="friends-item animated pulse">
+								<div class="friends-item">
 									<div class="friends-item__img">
 										<img class src="img/dog.jpeg" alt="friends image">
 									</div>
@@ -183,7 +184,7 @@
 							</li>
 
 							<li class="col-12 col-md-6 col-lg-4 slider__item">
-								<div class="friends-item animated pulse">
+								<div class="friends-item">
 									<div class="friends-item__img">
 										<img class src="img/dog2.jpeg" alt="friends image">
 									</div>
@@ -219,7 +220,7 @@
 							</li>
 
 							<li class="col-12 col-md-6 col-lg-4 slider__item">
-								<div class="friends-item animated pulse">
+								<div class="friends-item">
 									<div class="friends-item__img">
 										<img class src="img/cat2.jpeg" alt="friends image">
 									</div>
@@ -255,7 +256,7 @@
 							</li>
 
 							<li class="col-12 col-md-6 col-lg-4 slider__item">
-								<div class="friends-item animated pulse">
+								<div class="friends-item">
 									<div class="friends-item__img">
 										<img class src="img/dog4.jpeg" alt="friends image">
 									</div>
