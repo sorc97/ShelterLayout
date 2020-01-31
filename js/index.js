@@ -13,11 +13,10 @@ let currentItem = visibleItems;  // Element placed nearby in the right side of t
 let petButtons = document.querySelectorAll(".friends-item__button");
 // Menu variables
 const menu = document.querySelector(".menu");
+const nav = document.querySelector(".navigation");
 const menuToggler = document.querySelector(".nav-toggler");
 const menuCloseBtn = document.querySelector(".menu__button_close");
 let isMenuActive = false;
-
-
 
 // Slider methods
 const slideToRight = () => {
@@ -39,16 +38,20 @@ rightArrow.addEventListener('click', slideToRight);
 
 // Modal methods
 
-petButtons.forEach(button => button.addEventListener('click', toggleModal));
+petButtons.forEach(  // Action binding for each button
+  button => button.addEventListener('click', toggleModal)
+); 
 
-class Modal {
+class Modal {  // Modal component
   constructor(content) {
     const modalWrapper = document.createElement('div');
     modalWrapper.className = 'modal-window';
     modalWrapper.innerHTML = `
       <div class='modal-window__content'>
         ${content}
-        <button class="modal-window__button modal-window__button_close action-button fa fa-close" onclick="toggleModal()">
+        <button 
+          class="modal-window__button modal-window__button_close action-button fa fa-close" 
+          onclick="toggleModal()">
         </button>
       </div>
     `;
@@ -79,16 +82,25 @@ function getModalContent(e) {  // Content for modal window
 // Menu methods
 
 const toggleMenu = () => {
-  if(!isMenuActive) {  // when modal window close
+  if(!isMenuActive) {  // Open modal
     menu.style.display = "block";
     window.addEventListener('click', handleWindowClick);
     isMenuActive = true;
     return;
   }
-  // when modal window open
-  menu.style.display = "none";
+  // Close modal
   window.removeEventListener('click', handleWindowClick);
+  nav.classList.add('closeNav');
+  menu.classList.add('fadeOut');
+  nav.addEventListener('transitionend', closeAnimation);
   isMenuActive = false;
+}
+
+const closeAnimation = () => {
+  nav.removeEventListener('transitionend', closeAnimation)
+  nav.classList.remove('closeNav');
+  menu.classList.remove('fadeOut');
+  menu.style.display = "none";
 }
 
 const handleWindowClick = (e) => {
